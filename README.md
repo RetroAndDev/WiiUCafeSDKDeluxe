@@ -3,7 +3,7 @@
 	<h1 align="center">Wii U Cafe SDK Deluxe</h1>
 	<p align="center">Wii U Cafe SDK Deluxe is a tool to facilitate the creation of an installable image of a Unity game on a retail Wii U and not a CAT-DEV or CAT-R which are official development kits.</p>
 	<p align="center">To use this tool, you need several things: A Retail Wii U, Unity For Wii U and the Cafe SDK.</p>
-	<p align="center">Note : This tool can also be used without Unity. If you develop an homebrew you can use this tool (with some modifications in your folders) and easly make a installable version for your Wii U.</p>
+	<p align="center">Note : This tool can also be used without Unity. If you develop an homebrew you can use this tool (with some modifications in your folders) and easily make a installable version for your Wii U.</p>
 </div>
 
 
