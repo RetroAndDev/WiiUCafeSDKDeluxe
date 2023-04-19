@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD56082E-6C47-4B88-97DD-18FD12903326}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WiiUCafeSDKDeluxe</RootNamespace>
+    <AssemblyName>WiiUCafeSDKDeluxe</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Dynamic, Version=1.3.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.3.3\lib\net452\Microsoft.Dynamic.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting, Version=1.3.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.3.3\lib\net452\Microsoft.Scripting.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Scripting.Metadata, Version=1.3.3.0, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\DynamicLanguageRuntime.1.3.3\lib\net452\Microsoft.Scripting.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationOptions.cs" />
+    <Compile Include="ApplicationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="CreateProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateProject.Designer.cs">
+      <DependentUpon>CreateProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomFileCopier.cs" />
+    <Compile Include="GameVersion.cs" />
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogsWindow.Designer.cs">
+      <DependentUpon>LogsWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasteringData.cs" />
+    <Compile Include="MasteringWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasteringWindow.Designer.cs">
+      <DependentUpon>MasteringWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectData.cs" />
+    <Compile Include="ProjectLoadConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectLoadConfirm.Designer.cs">
+      <DependentUpon>ProjectLoadConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="SetupWindows\AboutWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\AboutWindow.Designer.cs">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\CreateVersion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\CreateVersion.Designer.cs">
+      <DependentUpon>CreateVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\HardwareSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\HardwareSetup.Designer.cs">
+      <DependentUpon>HardwareSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\MasterOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\MasterOption.Designer.cs">
+      <DependentUpon>MasterOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\ProjectSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\ProjectSetup.Designer.cs">
+      <DependentUpon>ProjectSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\SelectSubVersionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\SelectSubVersionWindow.Designer.cs">
+      <DependentUpon>SelectSubVersionWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SetupWindows\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SetupWindows\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WiiUHardware.cs" />
+    <Compile Include="WiiUMasterSettings.cs" />
+    <Compile Include="WiIUProjectSettings.cs" />
+    <Compile Include="WiiUTitleKeysGenerator.cs" />
+    <Compile Include="WinLogs\Log.cs" />
+    <Compile Include="WinLogs\WinLogsManager.cs" />
+    <EmbeddedResource Include="ApplicationResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateProject.resx">
+      <DependentUpon>CreateProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogsWindow.resx">
+      <DependentUpon>LogsWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasteringWindow.resx">
+      <DependentUpon>MasteringWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectLoadConfirm.resx">
+      <DependentUpon>ProjectLoadConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\AboutWindow.resx">
+      <DependentUpon>AboutWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\CreateVersion.resx">
+      <DependentUpon>CreateVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\HardwareSetup.resx">
+      <DependentUpon>HardwareSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\MasterOption.resx">
+      <DependentUpon>MasterOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\ProjectSetup.resx">
+      <DependentUpon>ProjectSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\SelectSubVersionWindow.resx">
+      <DependentUpon>SelectSubVersionWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SetupWindows\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WiiUDeluxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dummy_tv_load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dummy_gamepad_load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dummy_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WiiULogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiu_catr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiu_catdev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiu_whiteset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiu_blackset.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiiu_dev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mastereditor_32512-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\appconfig_32512-4.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
