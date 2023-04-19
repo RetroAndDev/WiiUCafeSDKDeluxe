@@ -9,7 +9,7 @@
 
 <div align="center">
 	<h1 align="center">Installation & Usage</h1>
-	<p align="center">I am currently writing in French and English a complete tutorial for my tool and how to make a Game with Unity Wii U. But I write an short tutorial about how to use this tool on GBATemp. <a href="url">Check it here</a></p>
+	<p align="center">I am currently writing in French and English a complete tutorial for my tool and how to make a Game with Unity Wii U. But I write an short tutorial about how to use this tool on GBATemp. <a href="https://gbatemp.net/threads/wii-u-cafe-sdk-deluxe-easily-install-unity-wii-u-games-to-your-retail-wii-u.631430/">Check it here</a></p>
 </div>
 
 <div align="center">
