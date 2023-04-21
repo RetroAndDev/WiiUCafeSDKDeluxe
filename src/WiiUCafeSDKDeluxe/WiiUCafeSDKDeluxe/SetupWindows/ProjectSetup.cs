@@ -38,10 +38,15 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
             cafeSdkInput.Text = projectData.cafeSdkLocation;
             unitySelection.Text = projectData.unityVersion;
 
-            gamepadBox.Image = Image.FromFile(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "gamepad_splach.png"));
-            tvBox.Image = Image.FromFile(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "tv_splach.png"));
+            if (File.Exists(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "gamepad_splach.png")))
+            {
+                gamepadBox.Image = Image.FromFile(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "gamepad_splach.png"));
+            }
 
-            iconBox.Image = Program.GetImageDromBase64String(projectData.projectIcon);
+            if (File.Exists(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "tv_splach.png")))
+            {
+                tvBox.Image = Image.FromFile(Path.Combine(Program.GetProjectDataPath(), "BootScreens", "tv_splach.png"));
+            }
         }
 
         private void autoDetectCafe_Click(object sender, EventArgs e)
