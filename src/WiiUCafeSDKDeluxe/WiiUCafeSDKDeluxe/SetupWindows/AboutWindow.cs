@@ -25,8 +25,8 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
             update = new UpdateInfo()
             {
                 versionMajor = 1,
-                versionMinor = 0,
-                versionPath = 2,
+                versionMinor = 1,
+                versionPath = 0,
                 DirectDownload = "https://github.com/ArtOS-Developper/WiiUCafeSDKDeluxe/releases",
             };
 

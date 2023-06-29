@@ -240,7 +240,7 @@ namespace WiiUCafeSDKDeluxe
 
             //nuspack java -jar NUSPacker.jar -in "inputDir" -out "outputDir" -encryptKeyWith 12345678123456781234567812345678
             Process process = new Process();
-            process.StartInfo.FileName = ApplicationOptions.defaultJavaPath;
+            process.StartInfo.FileName = SettingsManager.applicationSettings.javaPath;
             process.StartInfo.Arguments = nusCommand;
             process.StartInfo.CreateNoWindow = true;
             process.StartInfo.RedirectStandardOutput = true;

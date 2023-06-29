@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static WiiUCafeSDKDeluxe.WiIUProjectSettings;
 
 namespace WiiUCafeSDKDeluxe
@@ -17,7 +18,7 @@ namespace WiiUCafeSDKDeluxe
         public static string GetUnencryptedTitleKey(string titleKey, string passKey, string wiiUCommonKey)
         {
             var psi = new ProcessStartInfo();
-            psi.FileName = ApplicationOptions.defaultPythonPath;
+            psi.FileName = SettingsManager.applicationSettings.pythonPath;
 
             var script = Path.Combine(Environment.CurrentDirectory, "keygen.py");
 
