@@ -15,20 +15,19 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
 {
     public partial class AboutWindow : Form
     {
-        UpdateInfo update;
-        string updateFile = "https://raw.githubusercontent.com/RetroAndDev/WiiUCafeSDKDeluxe/main/Versions/update.json";
+        public static UpdateInfo update = new UpdateInfo()
+        {
+            versionMajor = 1,
+            versionMinor = 1,
+            versionPath = 0,
+            DirectDownload = "https://github.com/ArtOS-Developper/WiiUCafeSDKDeluxe/releases",
+        };
+
+        public const string updateFile = "https://raw.githubusercontent.com/RetroAndDev/WiiUCafeSDKDeluxe/main/Versions/update.json";
 
         public AboutWindow()
         {
             InitializeComponent();
-
-            update = new UpdateInfo()
-            {
-                versionMajor = 1,
-                versionMinor = 1,
-                versionPath = 0,
-                DirectDownload = "https://github.com/ArtOS-Developper/WiiUCafeSDKDeluxe/releases",
-            };
 
             label3.Text = "v" + update.versionMajor + "." + +update.versionMinor + "." + update.versionPath;
         }
@@ -45,38 +44,43 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        public static void CheckForUpdates(bool isAutomatic = false)
+        {
             WebClient client = new WebClient();
             string updateRemoteJson = client.DownloadString(updateFile);
             UpdateInfo remoteVersion = JsonSerializer.Deserialize<UpdateInfo>(updateRemoteJson);
 
             bool hereIsAnUpdate = false;
             Program.logsManager.LogSucess("Remote version : " + remoteVersion.versionMajor + "." + remoteVersion.versionMinor + "." + remoteVersion.versionPath + " local : " + update.versionMajor + "." + update.versionMinor + "." + update.versionPath);
-            if (remoteVersion.versionMajor >= update.versionMajor)
+            if (update.versionMajor >= remoteVersion.versionMajor)
             {
-                Program.logsManager.LogSucess("Remote Major > or = to local Major");
-                if (remoteVersion.versionMinor >= update.versionMinor)
+                Program.logsManager.LogSucess("Local Major > or = to Remote Major");
+                if (update.versionMinor >= remoteVersion.versionMinor)
                 {
-                    Program.logsManager.LogSucess("Remote Minor > or = to local Minor");
-                    if (remoteVersion.versionPath > update.versionPath)
+                    Program.logsManager.LogSucess("Local Minor > or = to Local Minor");
+                    if (update.versionPath >= remoteVersion.versionPath)
                     {
-                        Program.logsManager.LogSucess("Remote Patch > or = to local Patch");
-                        hereIsAnUpdate = true;
+                        Program.logsManager.LogSucess("Local Patch > or = to Local Patch");
+                        hereIsAnUpdate = false;
                     }
                     else
                     {
-                        hereIsAnUpdate = false;
+                        hereIsAnUpdate = true;
                         Program.logsManager.LogSucess("Remote Patch < or = to local Patch");
                     }
                 }
                 else
                 {
-                    hereIsAnUpdate = false;
+                    hereIsAnUpdate = true;
                     Program.logsManager.LogSucess("Remote Minor < or = to local Minor");
                 }
             }
             else
             {
-                hereIsAnUpdate = false;
+                hereIsAnUpdate = true;
                 Program.logsManager.LogSucess("Remote Major < or = to local Major");
             }
 
@@ -89,7 +93,10 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
             }
             else
             {
-                MessageBox.Show("No update found", "No update found", MessageBoxButtons.OK);
+                if (isAutomatic == false)
+                {
+                    MessageBox.Show("No update found", "No update found", MessageBoxButtons.OK);
+                }
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.IO;
 using System.Text.Json;
 using System.Windows.Forms;
+using WiiUCafeSDKDeluxe.SetupWindows;
 using WinLogs;
 
 namespace WiiUCafeSDKDeluxe
@@ -21,6 +22,8 @@ namespace WiiUCafeSDKDeluxe
             logsManager.InitializeLogSystem();
 
             CheckFolders();
+
+            AboutWindow.CheckForUpdates(true);
 
             SettingsManager.LoadSetings();
 
