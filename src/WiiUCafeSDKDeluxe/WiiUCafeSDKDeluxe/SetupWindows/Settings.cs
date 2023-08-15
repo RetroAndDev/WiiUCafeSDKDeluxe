@@ -84,5 +84,12 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
                 }
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Program.logsManager.Log("[Settings] Running Manual Path Checking");
+            SettingsManager.CheckPaths();
+            MessageBox.Show("Paths Checked ! Check in logs", "Finished", MessageBoxButtons.OK);
+        }
     }
 }
