@@ -13,10 +13,11 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
 		public static UpdateInfo update = new UpdateInfo
 		{
 			versionMajor = 1,
-			versionMinor = 1,
-			versionPath = 1,
-			DirectDownload = "https://github.com/ArtOS-Developper/WiiUCafeSDKDeluxe/releases"
-		};
+			versionMinor = 2,
+			versionPath = 0,
+            versionBuild = 1,
+			DirectDownload = "https://github.com/RetroAndDev/WiiUCafeSDKDeluxe/releases"
+        };
 
 		public const string updateFile = "https://raw.githubusercontent.com/RetroAndDev/WiiUCafeSDKDeluxe/main/Versions/update.json";
 
@@ -38,42 +39,14 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-		}
+            Process.Start("https://github.com/RetroAndDev/WiiUCafeSDKDeluxe/releases");
+        }
 
 		public static void CheckForUpdates(bool isAutomatic = false)
 		{
 			UpdateInfo remoteVersion = JsonSerializer.Deserialize<UpdateInfo>(new WebClient().DownloadString("https://raw.githubusercontent.com/RetroAndDev/WiiUCafeSDKDeluxe/main/Versions/update.json"));
-			bool hereIsAnUpdate = false;
 			Program.logsManager.LogSucess("Remote version : " + remoteVersion.versionMajor + "." + remoteVersion.versionMinor + "." + remoteVersion.versionPath + " local : " + update.versionMajor + "." + update.versionMinor + "." + update.versionPath);
-			if (update.versionMajor >= remoteVersion.versionMajor)
-			{
-				Program.logsManager.LogSucess("Local Major > or = to Remote Major");
-				if (update.versionMinor >= remoteVersion.versionMinor)
-				{
-					Program.logsManager.LogSucess("Local Minor > or = to Local Minor");
-					if (update.versionPath >= remoteVersion.versionPath)
-					{
-						Program.logsManager.LogSucess("Local Patch > or = to Local Patch");
-						hereIsAnUpdate = false;
-					}
-					else
-					{
-						hereIsAnUpdate = true;
-						Program.logsManager.LogSucess("Remote Patch < or = to local Patch");
-					}
-				}
-				else
-				{
-					hereIsAnUpdate = true;
-					Program.logsManager.LogSucess("Remote Minor < or = to local Minor");
-				}
-			}
-			else
-			{
-				hereIsAnUpdate = true;
-				Program.logsManager.LogSucess("Remote Major < or = to local Major");
-			}
-			if (hereIsAnUpdate)
+			if (!UpdateInfo.IsUpToDate(update, remoteVersion))
 			{
 				if (MessageBox.Show("An update is available, do you want to download it now ?", "Update found", MessageBoxButtons.YesNo) == DialogResult.Yes)
 				{
@@ -92,6 +65,64 @@ namespace WiiUCafeSDKDeluxe.SetupWindows
         public int versionMajor { get; set; }
         public int versionMinor { get; set; }
         public int versionPath { get; set; }
+		public int versionBuild { get; set; } = 0;
         public string DirectDownload { get; set; }
+
+        public static bool IsUpToDate(UpdateInfo applicationUpdate, UpdateInfo lasetUpdate)
+        {
+            bool isUpToDate = true;
+
+            //Check major version
+            if (applicationUpdate.versionMajor >= lasetUpdate.versionMajor)
+            {
+                Program.logsManager.Log("[Updater] Local Major >= remote Major");
+
+                //Check minor version
+                if (applicationUpdate.versionMinor >= lasetUpdate.versionMinor)
+                {
+                    Program.logsManager.Log("[Updater] Local Minor >= remote Minor");
+
+                    //Check patch version
+                    if (applicationUpdate.versionPath >= lasetUpdate.versionPath)
+                    {
+                        Program.logsManager.Log("[Updater] Local Patch >= remote Pacth");
+
+                        //Check build version
+                        if (applicationUpdate.versionBuild >= lasetUpdate.versionBuild)
+                        {
+                            //application BUILD is UP or EQUAL to laset remote
+                            Program.logsManager.Log("[Updater] Local Build >= remote Build");
+                            isUpToDate = true;
+                        }
+                        else
+                        {
+                            //HERE IS AN UPDATE
+                            Program.logsManager.Log("[Updater] Local Build < remote Build");
+                            isUpToDate = false;
+                        }
+                    }
+                    else
+                    {
+                        //HERE IS AN UPDATE
+                        Program.logsManager.Log("[Updater] Local Patch < remote Patch");
+                        isUpToDate = false;
+                    }
+                }
+                else
+                {
+                    //HERE IS AN UPDATE
+                    Program.logsManager.Log("[Updater] Local Minor < remote Minor");
+                    isUpToDate = false;
+                }
+            }
+            else
+            {
+                //HERE IS AN UPDATE
+                Program.logsManager.Log("[Updater] Local Major < remote Major");
+                isUpToDate = false;
+            }
+
+            return isUpToDate;
+        }
     }
 }

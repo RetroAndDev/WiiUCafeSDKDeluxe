@@ -20,11 +20,12 @@ namespace WiiUCafeSDKDeluxe
 		private static void Main()
 		{
 			logsManager.InitializeLogSystem();
-			InitPaths();
+            SettingsManager.LoadSetings();
+
+            InitPaths();
 			CheckFolders();
 			CheckPaths();
-			AboutWindow.CheckForUpdates(isAutomatic: true);
-			SettingsManager.LoadSetings();
+			//AboutWindow.CheckForUpdates(isAutomatic: true); -- Bugged. I hate make auto-updaters. -- Issue with if local minor is > from server. Ex local 1.2.0 detect update if server is 1.1.1...
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
 			if (CheckForProject())
@@ -54,17 +55,17 @@ namespace WiiUCafeSDKDeluxe
 		private static void CheckPaths()
 		{
 			logsManager.Log("[AppCheck] AppCheck is going to check all tools paths");
-			if (File.Exists(Paths["NUSPacker"]))
-			{
-				logsManager.LogSucess("[AppCheck] NUSPacker.jar exists at " + Paths["NUSPacker"]);
-			}
-			else
-			{
-				logsManager.LogError("[AppCheck] NUSPacker.jar don't exists at " + Paths["NUSPacker"]);
-				MessageBox.Show("NUSPacker.jar is not located. Please install it at " + Paths["NUSPacker"] + ", or reinstall Wii U CafeSDK Deluxe. The Tool will exit", "AppCheck Fatal Error", MessageBoxButtons.OK);
-				Application.Exit();
-			}
-			if (File.Exists(Paths["CDecrypt"]))
+            if (File.Exists(Paths["NUSPacker"]))
+            {
+                logsManager.LogSucess("[AppCheck] NUSPacker.jar exists at " + Paths["NUSPacker"]);
+            }
+            else
+            {
+                logsManager.LogError("[AppCheck] NUSPacker.jar don't exists at " + Paths["NUSPacker"]);
+                MessageBox.Show("NUSPacker.jar is not located. Please install it at " + Paths["NUSPacker"] + ", or reinstall Wii U CafeSDK Deluxe. The Tool will exit", "AppCheck Fatal Error", MessageBoxButtons.OK);
+                Application.Exit();
+            }
+            if (File.Exists(Paths["CDecrypt"]))
 			{
 				logsManager.LogSucess("[AppCheck] CDecrypt.exe exists at " + Paths["CDecrypt"]);
 			}
