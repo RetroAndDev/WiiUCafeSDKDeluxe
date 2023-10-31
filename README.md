@@ -9,7 +9,7 @@
 
 <div align="center">
 	<h1 align="center">V2 Development & Release</h1>
-	<p align="center">The v2 of Wii U Cafe SDK Deluxe will integrate a lot of changes in the Back of the tool. A support for Splash images will be added. The development of the v2 will start when I will be back from vacation in mid-September
+	<p align="center">The v2 of Wii U Cafe SDK Deluxe will integrate a lot of changes in the Back of the tool. A support for Splash images will be added. The development of the v2 will start when I will have extra times from my other personal projects
 </p>
 </div>
 
