@@ -25,6 +25,11 @@
 </div>
 
 <div align="center">
+	<h1 align="center">Issues and fixes</h1>
+	<p align="center">You can consult all known bugs and their fixes <a href="https://github.com/RetroAndDev/WiiUCafeSDKDeluxe/tree/main/wiki">here</a> </p>
+</div>
+
+<div align="center">
 	<h1 align="center">Acknowledgements</h1>
 	<p align="center">To create my tool I used the work of <b>dojafoja</b> on <a href="https://github.com/dojafoja/Kii-U-Generator">Kii U Generator</a> and <b>ihaveahax & timogus</b> on <a href="https://github.com/ihaveamac/nuspacker">NUSPacker</a>. Also thanks to <b>VitaSmith</b> for <a href="https://github.com/VitaSmith/cdecrypt">CDecrypt</a>. Special thanks to GBATemp contributor for others knowledge about the Wii U Software and Hardware</p>
 </div>
