@@ -9,8 +9,7 @@
 
 <div align="center">
 	<h1 align="center">V2 Development & Release</h1>
-	<p align="center">The v2 of Wii U Cafe SDK Deluxe will integrate a lot of changes in the Back of the tool. A support for Splash images will be added. The development of the v2 will start when I will have extra times from my other personal projects
-</p>
+	<p align="center">V2 will be a complete rewrite from scratch. It will be written in Dart with Flutter and will support Multi-Platform (Windows, macOS, Linux). All will be redone with no external dependencies and faster and easier installation. Will be make after releasing my big personnal project, StudySuite. I think v2 will be started at the end of 2024./p>
 </div>
 
 
