@@ -3,13 +3,12 @@
 	<h1 align="center">Wii U Cafe SDK Deluxe</h1>
 	<p align="center">Wii U Cafe SDK Deluxe is a tool to facilitate the creation of an installable image of a Unity game on a retail Wii U and not a CAT-DEV or CAT-R which are official development kits.</p>
 	<p align="center">To use this tool, you need several things: A Retail Wii U, Unity For Wii U and the Cafe SDK.</p>
-	<p align="center">Note : This tool can also be used without Unity. If you develop an homebrew you can use this tool (with some modifications in your folders) and easily make a installable version for your Wii U.</p>
 </div>
 
 
 <div align="center">
-	<h1 align="center">V2 Development & Release</h1>
-	<p align="center">V2 will be a complete rewrite from scratch. It will be written in Dart with Flutter and will support Multi-Platform (Windows, macOS, Linux). All will be redone with no external dependencies and faster and easier installation. Will be make after releasing my big personnal project, StudySuite. I think v2 will be started at the end of 2024./p>
+	<h1 align="center">V2 Release</h1>
+	<p align="center">V2 is a complete rework form scratch and is almost ready to release as beta version. New debuging tools, and fixes are in progress with this rewrite of Café SDK Deluxe wich is now easier to use and install. Released planned for Friday 25 april at 16PM (CET TIMEZONE!)</p>
 </div>
 
 
