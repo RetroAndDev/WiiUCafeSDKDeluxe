@@ -1,0 +1,1 @@
+python -m PyInstaller --clean --noconfirm --onefile --name CafeSDKDeluxe --paths "src/CafeSDKDeluxe" --hidden-import questionary --hidden-import colorama --hidden-import Crypto.Cipher src/CafeSDKDeluxe/main.py --distpath src/CafeSDKDeluxe/

@@ -1,2 +1,18 @@
-src/WiiUCafeSDKDeluxe/WiiUCafeSDKDeluxe/bin/*
-src/WiiUCafeSDKDeluxe/WiiUCafeSDKDeluxe/obj/*
+# Ignore Pyinstaller related things (and Python)
+/build
+/src/CafeSDKDeluxe/__pycache__
+
+# Ignore example Unity Project
+/src/.vs
+src/Assembly-CSharp-Editor.csproj
+src/Assembly-CSharp.csproj
+/src/Assets
+/src/Builds
+src/CafeSDKDeluxe/CafeSDKDeluxe.exe
+src/CafeSDKDeluxe/sdk_deluxe.config
+/src/Library
+/src/obj
+/src/ProjectSettings
+/src/UnityPackageManager
+src/src.sln
+/src/.vscode
