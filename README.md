@@ -8,7 +8,7 @@
 
 <div align="center">
 	<h1 align="center">V2 Release</h1>
-	<p align="center">V2 is a complete rework form scratch and is almost ready to release as beta version. New debuging tools, and fixes are in progress with this rewrite of Café SDK Deluxe wich is now easier to use and install. Released planned for Friday 25 april at 16PM (CET TIMEZONE!)</p>
+	<p align="center">V2 is a complete rework form scratch and is almost ready to release as beta version. New debuging tools, and fixes are in progress with this rewrite of Café SDK Deluxe wich is now easier to use and install. See releases for the v2.0.0 beta and the rewrite branch for the source code</p>
 </div>
 
 
