@@ -6,7 +6,7 @@ class Constants:
     COMMON_KEY = None
     DEBUG = False
 
-    APP_VERSION = "2.0.0-beta1"
+    APP_VERSION = "2.0.0-beta2"
 
     WORKING_UNITY_VERSIONS = ["2017.4.40f1"]
 

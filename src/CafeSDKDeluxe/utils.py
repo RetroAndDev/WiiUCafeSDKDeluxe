@@ -9,7 +9,7 @@ class Utils:
         cafe_root = os.environ.get("CAFE_ROOT")
         if not cafe_root:
             print("CAFE_ROOT environment variable is not set.")
-            raise EnvironmentError("CAFER_OOT environment variable is not set.")
+            raise EnvironmentError("CAFE_ROOT environment variable is not set.")
         return cafe_root
     
     @staticmethod
@@ -94,8 +94,9 @@ class Utils:
     def updateTitleIdToUnity(titleID: str) -> None:
         # Update the TitleID in the Unity project settings
         # Load the ProjectSettings.asset file
+        project_settings_path = os.path.join(Utils.getPathToUnityProject(), 'ProjectSettings', 'ProjectSettings.asset')
         try:
-            with open(os.path.join(Utils.getPathToUnityProject(), 'ProjectSettings', 'ProjectSettings.asset'), 'r') as f:
+            with open(project_settings_path, 'r') as f:
                 project_settings = f.read()
         except FileNotFoundError:
             print("ProjectSettings.asset file not found.")
@@ -108,7 +109,7 @@ class Utils:
             
         # Save the updated ProjectSettings.asset file
         try:
-            with open(os.path.join(os.getcwd(), 'ProjectSettings', 'ProjectSettings.asset'), 'w') as f:
+            with open(project_settings_path, 'w') as f:
                 f.write(project_settings)
             print(f"Updated TitleID to {titleID} in ProjectSettings.asset file.")
         except Exception as e:
