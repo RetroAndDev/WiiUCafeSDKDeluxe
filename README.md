@@ -1,4 +1,9 @@
 > [!WARNING]
+> **This project is technically lay-off for operational reasons : After investigation of issue [#11](https://github.com/RetroAndDev/WiiUCafeSDKDeluxe/issues/11), the archive.org Unity Licence Key is _DEAD_. Meaning that you can't activate Unity and build for the Wii U any more without your OWN Unity Nintendo Wii U Licence Key. Maybe try to reach developer support by mail to get your own key. It worked for me years ago (but don't know if it will today)**
+> 
+> I'm trying to search a way to bypass, maybe on a form of a custom Wii U homebrew engine ?
+
+> [!WARNING]
 > **This branch is experimental and can be unstable. This is the rewrite in Python of the original C# project.**
 
 <div align="center">
